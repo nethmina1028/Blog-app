@@ -1,0 +1,8 @@
+
+backend part
+
+ npm install axios
+
+ npm install react-toastify
+
+  npm install mongoose
