@@ -21,6 +21,6 @@ mongoose                      //5
 
 app.get('/',(req,res)=>{   //4
     console.log(req)
-     return response.status(234).send('Hello World')
+     return res.status(234).send('Hello World')
  });
  
