@@ -33,6 +33,10 @@ function page() {
          console.log(response.data);
          if(response.data){
            alert('Blog created successfully');
+           setTitle('');
+           setDescription('');
+           setCategory('Startup');
+
          }else{
             alert('Blog creation failed');
          }
