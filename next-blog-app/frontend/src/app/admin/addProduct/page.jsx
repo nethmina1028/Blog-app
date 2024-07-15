@@ -23,7 +23,7 @@ function page() {
       formData.append('description', description);
       formData.append('category', category);
       formData.append('image', image);
-
+   
       try {
          const response = await axios.post('http://localhost:5555/blog/add', formData, {
            headers: {
