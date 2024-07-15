@@ -1,11 +1,14 @@
 import Image from "next/image";
 import Sidebar from "../Components/AdminComponents/Sidebar";
 import { assets } from "../../../Assets/assets";
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 export default function Layout({ children }) {
   return (
     <>
       <div className="flex">
+        <ToastContainer  theme="dark"/>
         <Sidebar />
 
         <div className="flex flex-col w-full ">

@@ -12,19 +12,19 @@ const Schema = new mongoose.Schema({
     category: {
         type: String,
         required: true
-    },
+    },/*
     author:{
         type: String,
         required: true
-    },
-    Image:{
+    },*/
+    image:{
         type: String,
         required: true
-    },
+    },/*
     authorImg:{
         type: String,
         required: true
-    },
+    },*/
     date:{
         type: Date,
         default: Date.now()
