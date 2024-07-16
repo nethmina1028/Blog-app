@@ -4,10 +4,11 @@ import { assets, blog_data } from '../../../../Assets/assets';
 import Image from 'next/image';
 import Footer from '@/app/Components/Footer';
 import Link from 'next/link';
+import axios from 'axios';
 
 const page = ({params}) =>{
     const [data,setData] = useState(null);
-
+    
     const fetchBlogData =() =>{
         for(let i=0;i<blog_data.length;i++){
 
@@ -18,11 +19,12 @@ const page = ({params}) =>{
             }
         }
     }
+ 
 
     useEffect (()=>{
         fetchBlogData();
     
-    },[])
+    },[params.id])
   return (data?<>
     <div>
        <div className='px-5 py-5 bg-gray-200 md:px-12 lg:px-28'>

@@ -9,7 +9,7 @@ const storage = multer.memoryStorage(); // Store files in memory
 const upload = multer({ storage });
            
         
-
+   //add blog
 router.post("/add", upload.single("image"), async (req, res) => {
   try {
     const { title, description, category } = req.body;
@@ -39,6 +39,36 @@ router.post("/add", upload.single("image"), async (req, res) => {
   }
 });
 
+    
+  //get all blogs
+router.get("/all", async (req, res) => {
+  try {
+    const blogs = await Blog.find();
+    return res.status(200).send(blogs);
+  } catch (error) {
+    console.log(error.message);
+    res.status(500).send({ message: error.message });
+  }
+});
+
+     //Get book by id   
+
+     router.get('/all/:id', async (req, res) => {
+      try{
+          const {id} = req.params;
+          const blogs =  await Blog.findById(id);
+         
+          return res.status(200).json({
+              count:blogs.length,
+              data:blogs
+          });
+
+      }catch(error){
+
+          console.log(error.message);
+          res.status(500).send({message:error.message});
+      }
+   });
 
 
 export default router;
